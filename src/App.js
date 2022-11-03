@@ -3,7 +3,7 @@ import './App.css'
 import HomeScreen from './pages/HomeScreen'
 import LoginScreen from './pages/LoginScreen'
 import ProfileScreen from './pages/ProfileScreen'
-import { BrowserRouter as Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Routes, Route, Switch } from 'react-router-dom'
 import { auth } from './firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, logout, selectUser } from './features/userSlice'
@@ -34,14 +34,14 @@ function App() {
         {!user ? (
           <LoginScreen />
         ) : (
-          <Routes>
+          <Switch>
             <Route path="/profile">
               <ProfileScreen />
             </Route>
             <Route path="/">
               <HomeScreen />
             </Route>
-          </Routes>
+          </Switch>
         )}
       </Routes>
     </div>
