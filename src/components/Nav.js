@@ -9,12 +9,10 @@ function Nav() {
 
   function handleClickProfile() {
     history.push("/profile")
-    history.go()
   }
 
   function handleClickHome() {
     history.push("/")
-    history.go()
   }
 
   const transitionNavBar = () => {
